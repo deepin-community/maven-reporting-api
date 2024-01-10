@@ -25,14 +25,15 @@ under the License.
   <parent>
     <groupId>org.apache.maven.shared</groupId>
     <artifactId>maven-shared-components</artifactId>
-    <version>15</version>
+    <version>34</version>
+    <relativePath />
   </parent>
 
   <groupId>org.apache.maven.reporting</groupId>
   <artifactId>maven-reporting-api</artifactId>
-  <version>3.0</version>
+  <version>3.1.1</version>
 
-  <name>Maven Reporting API</name>
+  <name>Apache Maven Reporting API</name>
   <description>API to manage report generation.</description>
 
   <developers>
@@ -48,21 +49,58 @@ under the License.
   </developers>
 
   <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/shared/tags/maven-reporting-api-3.0</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/shared/tags/maven-reporting-api-3.0</developerConnection>
-    <url>http://svn.apache.org/viewvc/maven/shared/tags/maven-reporting-api-3.0</url>
+    <connection>scm:git:https://gitbox.apache.org/repos/asf/maven-reporting-api.git</connection>
+    <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/maven-reporting-api.git</developerConnection>
+    <url>https://github.com/apache/maven-reporting-api/tree/${project.scm.tag}</url>
+    <tag>maven-reporting-api-3.1.1</tag>
   </scm>
-
   <issueManagement>
     <system>jira</system>
-    <url>http://jira.codehaus.org/browse/MSHARED/component/14413</url>
+    <url>https://issues.apache.org/jira/issues/?jql=project%20%3D%20MSHARED%20AND%20component%20%3D%20maven-reporting-api</url>
   </issueManagement>
+  <ciManagement>
+    <system>Jenkins</system>
+    <url>https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-reporting-api/</url>
+  </ciManagement>
+  <distributionManagement>
+    <site>
+      <id>apache.website</id>
+      <url>scm:svn:https://svn.apache.org/repos/asf/maven/website/components/${maven.site.path}</url>
+    </site>
+  </distributionManagement>
+  
+  <properties>
+    <javaVersion>7</javaVersion>
+    <project.build.outputTimestamp>2022-07-29T20:27:56Z</project.build.outputTimestamp>
+  </properties>
 
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>3.3.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
   <dependencies>
     <dependency>
       <groupId>org.apache.maven.doxia</groupId>
       <artifactId>doxia-sink-api</artifactId>
-      <version>1.0</version>
+      <version>1.11.1</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>plexus-container-default</artifactId>
+          <groupId>org.codehaus.plexus</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
 </project>

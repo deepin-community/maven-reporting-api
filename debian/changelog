@@ -1,9 +1,12 @@
-maven-reporting-api (3.0-1.1) unstable; urgency=medium
+maven-reporting-api (3.1.1-1) unstable; urgency=medium
 
-  * Non maintainer upload by the Reproducible Builds team.
-  * No source change upload to rebuild on buildd with .buildinfo files.
+  * New upstream release
+  * Standards-Version updated to 4.6.1
+  * Switch to debhelper level 13
+  * Use salsa.debian.org Vcs-* URLs
+  * Track and download the new releases from GitHub
 
- -- Holger Levsen <holger@debian.org>  Tue, 29 Dec 2020 00:51:55 +0100
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 10 Oct 2022 14:52:32 +0200
 
 maven-reporting-api (3.0-1) unstable; urgency=medium
 
