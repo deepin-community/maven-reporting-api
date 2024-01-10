@@ -30,7 +30,6 @@ import java.util.Locale;
  * @author Brett Porter
  * @author <a href="evenisse@apache.org">Emmanuel Venisse</a>
  * @author <a href="mailto:vincent.siveton@gmail.com">Vincent Siveton</a>
- * @version $Id: MavenReport.java 942378 2010-05-08 13:06:13Z hboutemy $
  * @since 2.0
  */
 public interface MavenReport
@@ -46,7 +45,7 @@ public interface MavenReport
 
     /**
      * Generate the report depending the wanted locale.
-     * <br/>
+     * <br>
      * Mainly used for external reports like javadoc.
      *
      * @param sink the sink to use for the generation.
@@ -103,16 +102,16 @@ public interface MavenReport
      * An external report is a report which calls a third party program which generates some reports too.
      * A good example is javadoc tool.
      *
-     * @return <tt>true</tt> if this report is external, <tt>false</tt> otherwise.
-     * Default should be <tt>false</tt>.
+     * @return {@code true} if this report is external, {@code false} otherwise.
+     * Default should be {@code false}.
      */
     boolean isExternalReport();
 
     /**
      * Verify some conditions before generate the report.
      *
-     * @return <tt>true</tt> if this report could be generated, <tt>false</tt> otherwise.
-     * Default should be <tt>true</tt>.
+     * @return {@code true} if this report could be generated, {@code false} otherwise.
+     * Default should be {@code true}.
      */
     boolean canGenerateReport();
 }
